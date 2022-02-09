@@ -23,7 +23,7 @@ namespace DataAccess.Data
         public async Task<UserModel?> GetUser(int id)
         {
             var results = await _db.LoadData<UserModel, dynamic>(
-                storedProcedure: "dbo.spUser_get",
+                storedProcedure: "dbo.spUsers_get",
                 new { Id = id });
             return results.FirstOrDefault();
         }
